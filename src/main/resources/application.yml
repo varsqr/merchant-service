@@ -1,0 +1,30 @@
+server:
+  port: 8100
+  servlet:
+    context-path: /merchant-service/api
+spring:
+  application:
+    name: merchant-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/merchant-service?currentSchema=public
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+minio:
+  url: http://localhost:9000
+  bucket: merchant-service
+  access-key: root
+  secret-key: az2RGrBK08LV
+  auto-create-bucket: true
+  connect-timeout: 10000
+  write-timeout: 60000
+  read-timeout: 10000
+
+  prefix-to-delete: /s3/merchant-service
+  price-lists-folder: /s3/merchant-service/price-lists
+  price-lists-url: /price-lists
