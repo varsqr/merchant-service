@@ -7,8 +7,8 @@ spring:
     name: merchant-service
   datasource:
     url: jdbc:postgresql://localhost:5432/merchant-service?currentSchema=public
-    username: postgres
-    password: postgres
+    username: merchant-service
+    password: merchant-service
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -28,3 +28,7 @@ minio:
   prefix-to-delete: /s3/merchant-service
   price-lists-folder: /s3/merchant-service/price-lists
   price-lists-url: /price-lists
+
+logging:
+  level:
+    org.hibernate.orm.connections.pooling: error
